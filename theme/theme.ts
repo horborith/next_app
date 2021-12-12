@@ -24,7 +24,7 @@ const theme = createTheme({
       main: red.A400,
     },
   },
-  spacing: 4,
+  spacing: 8,
   typography: {
     fontSize: 12,
     subtitle1: {
