@@ -4,7 +4,7 @@ import Charts from "./../src/Charts";
 const ChartPage = () => {
   return (
     <Layouts>
-      <title>Z1 Data Sign Up</title>
+      <title>Charts</title>
       <Charts />
     </Layouts>
   );
