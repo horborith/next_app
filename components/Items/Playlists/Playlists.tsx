@@ -3,7 +3,11 @@ import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
 import styled from "styled-components";
 
-const Playlists = React.memo(() => {
+interface IProps {
+  title: string;
+}
+const Playlists = React.memo((props: IProps) => {
+  const { title } = props;
   return (
     <Box
       sx={{
@@ -18,7 +22,7 @@ const Playlists = React.memo(() => {
           alt="image"
         />
       </StyledImgWraper>
-      <Typography variant="subtitle1">Title</Typography>
+      <Typography variant="subtitle1">{title}</Typography>
       <Typography variant="body2">subtitle</Typography>
     </Box>
   );

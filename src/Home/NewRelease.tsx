@@ -7,10 +7,14 @@ import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
 import styled from "styled-components";
 import { range } from "lodash";
 
-const NewReleases = React.memo(() => {
+interface IProps {
+  title?: string;
+}
+const NewReleases = React.memo((props: IProps) => {
+  const { title } = props;
   return (
     <StyledWrapper>
-      <Typography variant="h6">New</Typography>
+      <Typography variant="h6">{title || "New"}</Typography>
       <Stack
         direction="row"
         justifyContent="space-between"
@@ -22,7 +26,7 @@ const NewReleases = React.memo(() => {
       </Stack>
       <Stack direction="row" spacing={2}>
         {range(0, 4).map((item, i) => (
-          <Playlists key={i} />
+          <Playlists key={i} title={"title" + item} />
         ))}
       </Stack>
     </StyledWrapper>
