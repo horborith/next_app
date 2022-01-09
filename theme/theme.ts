@@ -26,34 +26,34 @@ const theme = createTheme({
   },
   spacing: 8,
   typography: {
-    fontSize: 12,
-    subtitle1: {
-      fontSize: 12,
-    },
-    body1: {
-      fontWeight: 700,
-    },
-    button: {
-      fontStyle: "italic",
-    },
+    // fontSize: 12,
+    // subtitle1: {
+    //   fontSize: 12,
+    // },
+    // body1: {
+    //   fontWeight: 700,
+    // },
+    // button: {
+    //   fontStyle: "italic",
+    // },
   },
-  components: {
-    MuiButton: {
-      defaultProps: {
-        size: "large",
-      },
-    },
-  },
+  // components: {
+  //   MuiButton: {
+  //     defaultProps: {
+  //       size: "large",
+  //     },
+  //   },
+  // },
 });
-theme.typography.h3 = {
-  fontSize: "1.2rem",
-  "@media (min-width:600px)": {
-    fontSize: "1.5rem",
-  },
-  [theme.breakpoints.up("md")]: {
-    fontSize: "2rem",
-  },
-};
+// theme.typography.h3 = {
+//   fontSize: "1.2rem",
+//   "@media (min-width:600px)": {
+//     fontSize: "1.5rem",
+//   },
+//   [theme.breakpoints.up("md")]: {
+//     fontSize: "2rem",
+//   },
+// };
 
 // let theme = createTheme();
 // theme = responsiveFontSizes(theme);

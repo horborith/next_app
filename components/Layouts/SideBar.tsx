@@ -9,6 +9,7 @@ import Header from "./Header";
 import { useRouter } from "next/router";
 import styled from "styled-components";
 
+const SIDE_BAR_W = 290;
 const SideBar = React.memo(() => {
   const router = useRouter();
   const handleClick = (item: any) => {
@@ -23,10 +24,10 @@ const SideBar = React.memo(() => {
         keepMounted: true,
       }}
       sx={{
-        width: 200,
+        width: SIDE_BAR_W,
         flexShrink: 0,
         "& .MuiDrawer-paper": {
-          width: 200,
+          width: SIDE_BAR_W,
           boxSizing: "border-box",
         },
       }}
@@ -54,8 +55,11 @@ const SideBar = React.memo(() => {
 });
 
 const StyledListItem = styled(ListItem)`
+  opacity: 0.7;
+  cursor: pointer;
   &.Mui-selected {
-    background-color: red;
+    opacity: 1;
+    background-color: transparent;
   }
 `;
 export default SideBar;
