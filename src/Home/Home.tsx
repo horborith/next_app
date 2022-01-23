@@ -7,7 +7,7 @@ import styled from "styled-components";
 const Home = React.memo(() => {
   return (
     <StyledWrapper>
-      <NewReleases title="Hello" />
+      <NewReleases title="New" />
       <Divider sx={{ marginTop: 5, marginBottom: 5 }} />
     </StyledWrapper>
   );

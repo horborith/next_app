@@ -22,7 +22,7 @@ const NewReleases = React.memo((props: IProps) => {
         my={4}
       >
         <Typography variant="h4">Releases</Typography>
-        <Button endIcon={<ArrowForwardIcon />}>see all</Button>
+        <Button disabled color="primary" endIcon={<ArrowForwardIcon />} sx={{ opacity: 0.7 }}>see all</Button>
       </Stack>
       <Stack direction="row" spacing={2}>
         {range(0, 4).map((item, i) => (
@@ -35,5 +35,6 @@ const NewReleases = React.memo((props: IProps) => {
 const StyledWrapper = styled.div`
   display: flex;
   flex-direction: column;
+  
 `;
 export default NewReleases;

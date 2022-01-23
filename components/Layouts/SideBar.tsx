@@ -43,7 +43,8 @@ const SideBar = React.memo(() => {
                 selected={isSelected}
                 key={index}
               >
-                <ListItemIcon>{menu.icon}</ListItemIcon>
+                {menu.icon && <ListItemIcon>{menu.icon}</ListItemIcon>}
+
                 <ListItemText primary={menu.label} />
               </StyledListItem>
             );
