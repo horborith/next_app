@@ -14,6 +14,7 @@ const Playlists = React.memo((props: IProps) => {
         display: "flex",
         flex: 1,
         flexDirection: "column",
+        marginRight: 2,
       }}
     >
       <StyledImgWraper>

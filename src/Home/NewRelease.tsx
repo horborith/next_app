@@ -7,6 +7,7 @@ import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
 import styled from "styled-components";
 import { range } from "lodash";
 // import { SPOTIFY_API } from "config";
+import Slider from "react-slick";
 
 interface IProps {
   title?: string;
@@ -24,6 +25,14 @@ const NewReleases = React.memo((props: IProps) => {
   // SPOTIFY_API.getUserPlaylists("jmperezperez", function (err, data) {
   //   console.log("data::::jmperezperez:::", data);
   // });
+  const settings = {
+    dots: true,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 4,
+    slidesToScroll: 4,
+  };
+
   return (
     <StyledWrapper>
       <Typography variant="h6">{subtitle || "New"}</Typography>
@@ -36,11 +45,11 @@ const NewReleases = React.memo((props: IProps) => {
         <Typography variant="h4">{title}</Typography>
         {showSeeAll && <Button endIcon={<ArrowForwardIcon />}>see all</Button>}
       </Stack>
-      <Stack direction="row" spacing={2}>
-        {range(0, 4).map((item, i) => (
+      <Slider {...settings}>
+        {range(0, 12).map((item, i) => (
           <Playlists key={i} title={"title" + item} />
         ))}
-      </Stack>
+      </Slider>
     </StyledWrapper>
   );
 });

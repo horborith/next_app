@@ -28,8 +28,7 @@ const Track = React.memo((props: IProps) => {
         {showSeeAll && <Button endIcon={<ArrowForwardIcon />}>see all</Button>}
       </Stack>
       <Stack sx={{ overflow: "auto", paddingRight: 2 }} spacing={2}>
-        <Songs title={"title" + 1} subtitle={"sub" + 1} />
-        {range(0, 10).map((item, i) => (
+        {range(0, 30).map((item, i) => (
           <Songs key={i} title={"title" + item} subtitle={"sub" + item} />
         ))}
       </Stack>
