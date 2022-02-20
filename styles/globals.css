@@ -20,4 +20,5 @@ a {
 }
 :root {
   --sidebar_w: 290px;
+  --playing_h: 100px;
 }

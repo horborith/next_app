@@ -16,20 +16,12 @@ const SideBar = React.memo(() => {
     router.push(item.url);
   };
   return (
-    <Drawer
+    <StyledDrawer
       variant="permanent"
       anchor="left"
       open={true}
       ModalProps={{
         keepMounted: true,
-      }}
-      sx={{
-        width: SIDE_BAR_W,
-        flexShrink: 0,
-        "& .MuiDrawer-paper": {
-          width: SIDE_BAR_W,
-          boxSizing: "border-box",
-        },
       }}
     >
       <div>
@@ -50,10 +42,21 @@ const SideBar = React.memo(() => {
           })}
         </List>
       </div>
-    </Drawer>
+    </StyledDrawer>
   );
 });
-
+const StyledDrawer = styled(Drawer)`
+  && {
+    width: var(--sidebar_w);
+    height: calc(100vh - var(--playing_h));
+    flex-shrink: 0;
+    .MuiDrawer-paper {
+      width: var(--sidebar_w);
+      height: calc(100vh - var(--playing_h));
+      box-sizing: border-box;
+    }
+  }
+`;
 const StyledListItem = styled(ListItem)`
   opacity: 0.7;
   cursor: pointer;

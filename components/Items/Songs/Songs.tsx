@@ -11,7 +11,6 @@ interface IProps {
 }
 const Songs = React.memo((props: IProps) => {
   const { title, subtitle } = props;
-  console.log("songs:::::");
   const handleFavourite = (title: string) => {
     console.log("Favourite:::::", title);
   };

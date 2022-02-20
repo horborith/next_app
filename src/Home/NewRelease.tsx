@@ -47,7 +47,11 @@ const NewReleases = React.memo((props: IProps) => {
       </Stack>
       <Slider {...settings}>
         {range(0, 12).map((item, i) => (
-          <Playlists key={i} title={"title" + item} />
+          <Playlists
+            key={i}
+            title={"title" + item}
+            subtitle={"subtitle" + item}
+          />
         ))}
       </Slider>
     </StyledWrapper>
