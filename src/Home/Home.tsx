@@ -2,14 +2,23 @@ import React from "react";
 import Divider from "@mui/material/Divider";
 
 import NewReleases from "./NewRelease";
+import HotTract from "./HotTract"
 import styled from "styled-components";
 
 const Home = React.memo(() => {
   return (
-    <StyledWrapper>
-      <NewReleases title="New" />
-      <Divider sx={{ marginTop: 5, marginBottom: 5 }} />
-    </StyledWrapper>
+    <div>
+      <StyledWrapper>
+        <NewReleases title="New" />
+        <Divider sx={{ marginTop: 5, marginBottom: 5 }} />
+      </StyledWrapper>
+
+      <StyledWrapper>
+        <HotTract title="Hot Tract" />
+        <Divider sx={{ marginTop: 5, marginBottom: 5 }} />
+      </StyledWrapper>
+
+    </div>
   );
 });
 const StyledWrapper = styled.div`

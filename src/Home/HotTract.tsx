@@ -13,19 +13,18 @@ import Slider from "react-slick";
 interface IProps {
   title?: string;
 }
-const NewReleases = React.memo((props: IProps) => {
+const HotTract = React.memo((props: IProps) => {
   const { title } = props;
   return (
     <StyledWrapper>
-      <Typography variant="h6">{title || "New"}</Typography>
+      <Typography variant="h6">{title || "Hot Tract"}</Typography>
       <Stack
-        direction="row"
+        direction="column"
         justifyContent="space-between"
         alignItems="center"
         my={4}
       >
-        <Typography variant="h4">Releases</Typography>
-        <Button disabled color="primary" endIcon={<ArrowForwardIcon />} sx={{ opacity: 0.7 }}>see all</Button>
+        <Typography variant="h4">Gobal Top 50</Typography>
       </Stack>
       <Stack direction="row" spacing={2}>
         {range(0, 4).map((item, i) => (
@@ -35,10 +34,11 @@ const NewReleases = React.memo((props: IProps) => {
     </StyledWrapper>
   );
 });
+
 const StyledWrapper = styled.div`
   display: flex;
   flex-direction: column;
   
 `;
 
-export default NewReleases;
+export default HotTract;
