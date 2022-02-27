@@ -8,16 +8,30 @@ import PauseIcon from "@mui/icons-material/Pause";
 import VolumeUpIcon from "@mui/icons-material/VolumeUp";
 import LoopIcon from "@mui/icons-material/Loop";
 import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
+import { useAppSelector, useAppDispatch } from "@redux";
+
+import {
+  selectPlayer,
+  setpauseTrack,
+  setplayTrack,
+} from "@redux/reducers/playerSlice";
 
 const Playing = React.memo(() => {
+  const dispatch = useAppDispatch();
+  const player = useAppSelector(selectPlayer);
+  console.log("player:::", player); // true or fasle
+  const handlePlay = () => {
+    dispatch(player ? setpauseTrack() : setplayTrack());
+  };
+
   return (
     <StyledWrapper direction="row" alignItems="center" spacing={2}>
       <Stack direction="row" alignItems="center" spacing={1}>
         <IconButton>
           <SkipPreviousIcon />
         </IconButton>
-        <StyledPlay>
-          <PlayArrowIcon />
+        <StyledPlay onClick={handlePlay}>
+          {player ? <PauseIcon /> : <PlayArrowIcon />}
         </StyledPlay>
         <IconButton>
           <SkipNextIcon />
