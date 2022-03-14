@@ -6,8 +6,17 @@ import NewReleases from "./NewRelease";
 import Track from "./Track";
 import Discover from "./Discover";
 import styled from "styled-components";
+import { useAppSelector, useAppDispatch } from "@redux";
+import { selectProduct, addNewProduct } from "@redux/reducers/productSlice";
 
 const Home = React.memo(() => {
+  const product = useAppSelector(selectProduct);
+  const dispatch = useAppDispatch();
+  const haddleClick = () => {
+    const item = { id: "3", name: "Water" };
+    dispatch(addNewProduct(item));
+  };
+
   return (
     <StyledWrapper>
       <NewReleases title="Releases" subtitle="New" showSeeAll={true} />
